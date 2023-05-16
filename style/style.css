@@ -1,0 +1,57 @@
+body{
+    background: linear-gradient(90deg, rgba(219,219,238,1) 11%, rgba(160,199,233,1) 57%, rgba(170,230,242,1) 100%);
+}
+
+
+.rps  {
+    height: 80px;
+    width: 80px;
+}
+
+.rps:hover{
+    transform: scale(1.2);
+}
+
+
+#imageContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    width: 50%;
+}
+
+.player {
+    order: 1;
+}
+
+.computer {
+    order: 2; 
+}
+
+.winner {
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+input {
+    padding: 5px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  
+}
+
+input:hover {
+    box-shadow: 0 0 11px rgba(91, 208, 247, 0.9);
+}
+
+input[type=text]:focus {
+    border: 2px solid rgba(91, 208, 247, 0.9);
+}
+

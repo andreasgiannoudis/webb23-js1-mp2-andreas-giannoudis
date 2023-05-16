@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project 2</title>
+    <script src="./js/miniProject2.js" defer></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <h2>Welcome to Rock Paper Scissors game!</h2>
+    <form>
+        <label>Hello, what is your name?</label>
+        <input type="text" id="name" placeholder="Write your name">
+        <button>Submit</button>
+    </form>
+    <h3></h3>
+
+    <div id="imageContainer">
+        <div id="player" class="container player">
+            <img src="./img/paper.png" class="rps" id="paper" alt="paper">
+            <img src="./img/rock.png" class="rps" id="rock" alt="rock">
+            <img src="./img/scissors.png" class="rps" id="scissors" alt="scissors">
+        </div>
+
+        <div id="computer" class="container computer">
+            <img src="./img/questionMark.png" id="computerImg" class="rps">
+        </div>         
+    </div>
+
+
+    <div id="result">
+        <h1 id="numOfRounds"></h1>
+        <span id="bothChoices"></span>
+        <h2 id="h2Result"></h2>
+        <span id="winner" class="winner"></span>
+        <span id="score"></span>
+    </div>
+
+</body>
+
+</html>
