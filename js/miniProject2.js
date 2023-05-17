@@ -1,7 +1,3 @@
-const playerRock = document.querySelector('#rock');
-const playerPaper = document.querySelector('#paper');
-const playerScissors = document.querySelector('#scissors');
-
 const rpsArr = ['rock', 'paper', 'scissors'];
 
 let playerScore = 0;
@@ -18,27 +14,31 @@ const bothChoices = document.querySelector('#bothChoices');
 const h1NumOfRounds = document.querySelector('#numOfRounds');
 let numOfRounds = 1;
 
+const btnChoices = document.querySelector('#imageContainer');
 
 const imgComputer = document.querySelector('#computerImg');
 
+
 form.addEventListener('submit', function(event)
 {
-    event.preventDefault();  
+    event.preventDefault(); 
     nameH3.innerText = `Hello ${nameInput.value}, let's play the rock paper scissors game!`;
     form.style.visibility = 'hidden';
 
-    playerRock.addEventListener('click', ()=>
+    btnChoices.addEventListener('click', event=>
     {
-        play('rock');
-    });
-    playerPaper.addEventListener('click', ()=>
-    {
-        play('paper');
-    });
-    playerScissors.addEventListener('click', ()=>
-    {
-        play('scissors');
-    });
+        if (event.target.id == "rock"){
+            play('rock');
+        }
+        else if (event.target.id == "paper")
+        {
+            play('paper');
+        }
+        else if (event.target.id == "scissors")
+        {
+            play('scissors');
+        }
+    })
     
 });
 
@@ -64,17 +64,16 @@ function play(choiceOfPlayer)
                 playerScore++;
                 bothChoices.innerText = `You chose ${choiceOfPlayer} and Computer chose ${rpsArr[randomRps]}`;   
                 h2.innerText = `You win this round because ${choiceOfPlayer} destroys ${rpsArr[randomRps]}!`;
+                h2.style.color = 'green';
                 score.innerText = `${nameInput.value}: ${playerScore} - Computer: ${computerScore}`;
-                
              }
 
              else{
                 computerScore++;
                 bothChoices.innerText = `Computer chose ${rpsArr[randomRps]} and You chose ${choiceOfPlayer}`;
                 h2.innerText = `Computer wins this round because ${rpsArr[randomRps]} destroys ${choiceOfPlayer}!`;
+                h2.style.color = 'red';
                 score.innerText = `${nameInput.value}: ${playerScore} - Computer: ${computerScore}`;
-                  
-
              }
 
 
@@ -91,13 +90,12 @@ function play(choiceOfPlayer)
     
     if (playerScore == 3 || computerScore == 3)
     {
-        score.innerText = `${nameInput.value}: ${playerScore} - Computer: ${computerScore}`;
-        gameEnd();
+            gameEnd();
         
-        //set interval to delay the reset
+        //setting interval to delay the reset
         setTimeout(() => {
             resetGame();      
-        }, 2000);
+        }, 3000);
     }
    
     if (playerScore > 3 || computerScore > 3)
@@ -134,6 +132,7 @@ function resetGame()
     winner.innerText = '';
     form.style.visibility = '';
     h1NumOfRounds.innerText = '';
+    bothChoices.innerText = '';
     numOfRounds = 1;
     form.reset();
 }
