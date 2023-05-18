@@ -14,7 +14,7 @@ const bothChoices = document.querySelector('#bothChoices');
 const h1NumOfRounds = document.querySelector('#numOfRounds');
 let numOfRounds = 1;
 
-const btnChoices = document.querySelector('#imageContainer');
+const btnChoices = document.querySelector('#player');
 
 const imgComputer = document.querySelector('#computerImg');
 
@@ -54,6 +54,7 @@ function play(choiceOfPlayer)
     if (choiceOfPlayer == rpsArr[randomRps])
     {
         h2.innerText = "It's a tie";
+        h2.style.color = 'green';
         bothChoices.innerText = `You chose ${choiceOfPlayer} and Computer chose ${rpsArr[randomRps]}`;
         score.innerText = `${nameInput.value}: ${playerScore} - Computer: ${computerScore}`;
     }
